@@ -1,3 +1,21 @@
 :root{
   --graident:#FFB300;
 }
+html{
+  margin:0px;
+  padding: 0px;
+}
+
+#january{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.january__information{
+  grid-template-rows: repeat(3,1fr);
+  grid-gap: 40px;
+}
+.wallpaper{
+  background-image: url('/Assets/Images/Lady.jpg');
+ 
+}
