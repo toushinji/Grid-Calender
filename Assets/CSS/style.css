@@ -1,21 +1,69 @@
 :root{
+  --bg-color:rgba(0, 0, 0, 0.85);
   --graident:#FFB300;
+  --color:#E5E5E5;
+  --border:#3A3A3A;
+  --quote-color:#C4C4C4;
 }
+
 html{
   margin:0px;
   padding: 0px;
+  background-color:var(--bg-color);
 }
 
 #january{
   display:grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(320px,1fr));
 }
 
 .january__information{
+  display:grid;
+  grid-template-columns: minmax(320px, 1fr);
   grid-template-rows: repeat(3,1fr);
-  grid-gap: 40px;
+  justify-items: center;
+
+}
+
+.year{
+  color:var(--graident);
+  font-size:3rem;
+}
+
+.quotation{
+  color:var(--quote-color);
 }
 .wallpaper{
+
+  height:100vh;
   background-image: url('/Assets/Images/Lady.jpg');
- 
+  grid-template: span 2 / 1;
+}
+
+.calendar{
+  display:grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 5px;
+  grid-auto-flow: dense;
+}
+/* .calender__week{
+  display:grid;
+  grid-template-columns: repeat(7,1fr);
+} */
+
+/* .dates{
+  display:grid;
+  grid-gap: 5px;
+} */
+
+.item{
+  text-align:center; 
+  height:50px;
+  width:50px;
+  border:1px solid var(--border);
+  border-radius:5px;
+}
+
+.item:hover{
+  border:1px solid var(--graident);
 }
