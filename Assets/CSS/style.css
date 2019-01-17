@@ -4,6 +4,12 @@
   --color:#E5E5E5;
   --border:#3A3A3A;
   --quote-color:#C4C4C4;
+  --year-sz:4rem;
+  --quote-sz:3rem;
+  --arthor-sz:2rem;
+  --week-sz:9px;
+  --week-color:#515050;
+  --cal-month-sz:2rem;
 }
 
 html{
@@ -12,49 +18,99 @@ html{
   background-color:var(--bg-color);
 }
 
+@font-face{
+  font-family: HelveticaNeue;
+  src:url(/Assets/Fonts/HelveticaNeue-Regular.ttf);
+  font-style:normal;
+  font-weight: normal;
+}
+
+@font-face{
+  font-family: Helvetica-Neue-Medium;
+  src:url(/Assets/Fonts/Helvetica-Neue-Medium.ttf);
+  font-style:Medium;
+  font-weight: Bold;
+}
+
+@font-face{
+  font-family:Futura Std;
+  src: url(/Assets/Fonts/Futura\ Std\ Bold\ Oblique.otf);
+  font-style:oblique;
+  font-weight: bold;
+}
+
+@font-face{
+  font-family:ITC Avant Garde Gothic;
+  src: url(/Assets/Fonts/ITC\ Avant\ Garde\ Gothic\ Bold.otf);
+  font-style:normal;
+  font-weight:bold;
+}
+
 #january{
   display:grid;
-  grid-template-columns: repeat(2, minmax(320px,1fr));
+  grid-template-columns: repeat(2, 1fr);
+  
 }
+
 
 .january__information{
   display:grid;
-  grid-template-columns: minmax(320px, 1fr);
-  grid-template-rows: repeat(3,1fr);
-  justify-items: center;
-
+  grid-template-columns: repeat(2, minmax(320px, 1fr)); 
+  grid-template-rows: repeat(3,1fr); 
+  justify-content: center;
 }
 
 .year{
-  color:var(--graident);
-  font-size:3rem;
+  font-family: Futura Std;
+  color:  var(--graident);
+  font-size:var(--year-sz);
 }
 
 .quotation{
   color:var(--quote-color);
+  font-size: var(--quote-sz);
+  font-family: ITC Avant Garde Gothic;
 }
-.wallpaper{
 
-  height:100vh;
+.arthor{
+  /* padding-top:20px; */
+  font-size: var(arthor-sz);
+  color: var(--quote-color);
+  font-family: ITC Avant Garde Gothic;
+}
+
+.week{
+  font-family: Futura Std;
+  font-size: var(--week-sz);
+  text-transform: uppercase;
+  color: var(--week-color);
+}
+
+.wallpaper{
+  /* display:grid;
+  height:100vh; */
   background-image: url('/Assets/Images/Lady.jpg');
-  grid-template: span 2 / 1;
+  /* grid-auto-flow: dense; */
 }
 
 .calendar{
   display:grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-gap: 5px;
-  grid-auto-flow: dense;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 5px; 
+  grid-column: 2 / -1;
+  
 }
-/* .calender__week{
-  display:grid;
-  grid-template-columns: repeat(7,1fr);
-} */
 
-/* .dates{
-  display:grid;
-  grid-gap: 5px;
-} */
+.calendar__month{
+  font-family: Helvetica-Neue-Medium;
+  transform: rotate(90deg);
+  font-size: var(--cal-month-sz);
+  text-transform: uppercase;
+  color: var(--week-color);
+  grid-column: 1 / span -1;
+  grid-row:  span 1 /   5 ;
+  background-color:red;
+}
 
 .item{
   text-align:center; 
@@ -66,4 +122,8 @@ html{
 
 .item:hover{
   border:1px solid var(--graident);
+}
+
+.date{
+  color:white;
 }
