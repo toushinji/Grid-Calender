@@ -1,69 +1,189 @@
 :root{
-  --bg-color:rgba(0, 0, 0, 0.85);
-  --graident:#FFB300;
+  --bg-color:#222;
+  --gradient:#FFB300;
   --color:#E5E5E5;
   --border:#3A3A3A;
   --quote-color:#C4C4C4;
   --year-sz:4rem;
   --quote-sz:3rem;
-  --authur-sz:2rem;
-  --week-sz:9px;
-  --week-color:#515050;
+  --authur-sz:1rem;
+  --day-sz:9px;
+  --day-color:#515050;
   --cal-month-sz:2rem;
   --golden-width:100vw / 1.618;
 }
 
-html{
-  margin:0px;
+@font-face{
+  font-family: 'future std';
+  src: url(/assets/fonts/Futura\ Std\ Bold\ Oblique.otf);
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face{
+  font-family: 'itc avant garde';
+  src: url('/assets/fonts/ITC\ Avant\ Garde\ Gothic\ Bold.otf');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face{
+  font-family: 'helvetica neue';
+  src: url('/assets/fonts/Helvetica-Neue-Medium.ttf');
+  font-style: normal;
+  font-weight: medium;
+}
+
+body{
+  margin: 0px;
   padding: 0px;
-  background-color:var(--bg-color);
+  background-color: var(--bg-color);
+  font-family: 'helvetica neue';
+  font-size: 16px;
 }
 
 .calendar{
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  height: 100vh;
+  grid-template-columns: .382fr .618fr;
 }
 
 .calendar__info{
-color:  var(--graident)
+  display: grid;
+  align-content: space-between;
+  grid-template-rows: repeat(3, auto);
+  grid-row-gap:100px;
+  margin:0px 50px 50px 50px;
 }
 
 .calendar__year{
+  margin: 50px 0px 0px 0px;
+  display:grid;
   font-size: var(--year-sz);
+  color: var(--gradient);
+
 }
 
-.agenda{
-  text-transform: uppercase;
-}
-
-.agenda__month{
-  display: flex;
-}
-
-.agenda__name--transform-90{
-  transform: rotate(90deg);
-}
-
-.agenda__vertical{
-  width: 100px;
-  height: 1px;
-  border: 1px solid var(--graident);
+.calendar__quote{
+  text-align: left;
+  letter-spacing: -0.1rem;
+ 
 }
 
 q{
+  text-align: right;
   font-size: var(--quote-sz);
   color:  var(--quote-color);
+  font-size: 3rem;
 }
 
 .authur{
+  display: grid;
   font-size:  var(--authur-sz);
   color: var(--quote-color);
+  letter-spacing: .09rem;
+  margin-top:50px;
+  align-self: end;
+  justify-self: end;
+}
+
+.agenda{
+  display: grid;
+  justify-content: space-between;
+  text-transform: uppercase;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-flow: column;
+ 
+}
+
+.agenda__month{
+  margin:0px;
+  display: grid;
+  font-size: var(--cal-month-sz);
+  writing-mode: vertical-lr;
+}
+
+.agenda__month--transform-90{
+  color: var(--quote-color);
+  margin: 0px;
+  position: relative;
+  background-color: red;
+}
+
+
+.agenda__month--transform-90:after{
+  content: '';
+  position: absolute;
+  width:  2px;
+  height: 100%;
+  background-color: pink;
+  margin-left: 66px;
+
+}
+
+.agenda__weeks{
+  display: grid;
+  list-style-type: none;
+  grid-gap: 5px;
+  grid-template-columns: repeat(7, 3.5em);
+  padding: 0px;
+  margin: 0px;
+
+}
+
+.agenda__day{
+  display:grid;
+  color: var(--quote-color);
+  font-size: var(--day-sz);
+  place-items: end start;
+  margin: 0px;
+}
+
+.agenda__date{
+  display: grid;
+  height: 50px;
+  width: 50px;
+  margin: 0px;
+  place-items: end end;
+  border-radius: 3px; 
+  border: 2px solid var(--quote-color);
+  color: var(--bg-color);
+}
+
+.agenda--active{
+  background-color: var(--gradient);
+  border:2px solid var(--gradient);
+}
+
+.agenda--active:hover{
+  /* background-color: var(--bg-color);
+  color: var(--gradient);
+   */
+}
+
+.agenda__date:hover{
+  border: 2px solid var(--gradient);
+  background-color: var(--gradient);
 }
 
 .calendar__wallpaper{
-  display:grid;
-  grid-template-columns: repeat(2, autofit);
-  grid-column: 1 / -1;
-  height: 100vh;
-  background-image: url('/assets/images/Amandla.jpg');
+  background: top/cover no-repeat url('/assets/images/Aegis.jpg');
 }
+
+/* @keyframes{
+  0%{
+    background-color:
+  }
+
+  50%{
+
+  }
+
+  75%{
+
+  }
+
+  100%{
+
+  }
+} */
