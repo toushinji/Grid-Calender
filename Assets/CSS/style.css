@@ -15,7 +15,7 @@
 
 @font-face{
   font-family: 'future std';
-  src: url(/assets/fonts/Futura\ Std\ Bold\ Oblique.otf);
+  src: url('/assets/fonts/Futura\ Std\ Bold\ Oblique.otf');
   font-style: normal;
   font-weight: normal;
 }
@@ -45,7 +45,7 @@ body{
 .calendar{
   display: grid;
   height: 100vh;
-  grid-template-columns: .382fr .618fr;
+  grid-template-columns: .382fr 1fr;
 }
 
 .calendar__info{
@@ -168,23 +168,5 @@ q{
 }
 
 .calendar__wallpaper{
-  background: top/cover no-repeat url('/assets/images/Aegis.jpg');
+  background: center/cover no-repeat url('../images/lady.jpeg');
 }
-
-/* @keyframes{
-  0%{
-    background-color:
-  }
-
-  50%{
-
-  }
-
-  75%{
-
-  }
-
-  100%{
-
-  }
-} */
