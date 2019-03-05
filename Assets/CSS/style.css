@@ -93,7 +93,7 @@ q{
   text-transform: uppercase;
   grid-template-columns: 1fr 1fr;
   grid-auto-flow: column;
- 
+  border: 1px solid yellowgreen;
 }
 
 .agenda__month{
@@ -101,13 +101,15 @@ q{
   display: grid;
   font-size: var(--cal-month-sz);
   writing-mode: vertical-lr;
+  background-color: green;
 }
 
 .agenda__month--transform-90{
   color: var(--quote-color);
   margin: 0px;
   position: relative;
-  background-color: red;
+  /* background-color: red; */
+  outline: 1px dotted #FFB300;
 }
 
 
@@ -118,7 +120,6 @@ q{
   height: 100%;
   background-color: pink;
   margin-left: 66px;
-
 }
 
 .agenda__weeks{
@@ -128,7 +129,6 @@ q{
   grid-template-columns: repeat(7, 3.5em);
   padding: 0px;
   margin: 0px;
-
 }
 
 .agenda__day{
