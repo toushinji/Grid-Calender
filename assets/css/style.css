@@ -156,11 +156,6 @@ q{
   border:2px solid var(--gradient);
 }
 
-.agenda--active:hover{
-  /* background-color: var(--bg-color);
-  color: var(--gradient);
-   */
-}
 
 .agenda__date:hover{
   border: 2px solid var(--gradient);
